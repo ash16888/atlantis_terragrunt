@@ -40,7 +40,8 @@ RUN set -eux \
 ###
 RUN mv /usr/local/bin/docker-entrypoint.sh /usr/local/bin/docker-entrypoint-original.sh
 # the new docker-entrypoint.sh will do some work and then call the original entry point
-ADD data/.terraformrc /home/atlantis/.terraformrc
 ADD data/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 ADD data/create_gitlab_user_ssh_key.sh /usr/local/bin/create_gitlab_user_ssh_key.sh
+# if you need enable terraform mirror for atlantis
+# ADD data/.terraformrc /home/atlantis/.terraformrc
 
